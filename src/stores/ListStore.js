@@ -66,6 +66,13 @@ AppDispatcher.register(function(action) {
       ListStore.emitChange();
       break;
 
+    case QcConstants.LIST_DELETE:
+      var id = action.id;
+	  delete _lists[id];
+      ListStore.emitChange();
+      break;
+
+
     default:
 	  throw Error('Unhandled action: '+action.actionType);
   }

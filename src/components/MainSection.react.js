@@ -1,4 +1,5 @@
 var React = require('react');
+var ListDetail = require('./ListDetail.react');
 var ReactPropTypes = React.PropTypes;
 
 var MainSection = React.createClass({
@@ -17,10 +18,8 @@ var MainSection = React.createClass({
       return null;
     }
 
-    var list = this.props.list;
-
     return (
-      <h1>{list.name}</h1>
+		<ListDetail list={this.props.list} />
     );
   },
 });

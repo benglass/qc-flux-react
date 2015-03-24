@@ -13,6 +13,16 @@ var ListActions = {
     });
   },
 
+  /**
+   * @param  {string} name
+   */
+  delete: function(id) {
+    AppDispatcher.dispatch({
+      actionType: QcConstants.LIST_DELETE,
+      id: id
+    });
+  }
+
 };
 
 module.exports = ListActions;

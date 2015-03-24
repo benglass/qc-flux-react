@@ -6,4 +6,3 @@ React.render(
 	<QcApp />,
 	document.getElementById('qcapp')
 );
-

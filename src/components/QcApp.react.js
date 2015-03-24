@@ -1,6 +1,7 @@
 var React = require('react');
 var ListForm = require('./ListForm.react');
 var MainSection = require('./MainSection.react');
+var ListNav = require('./ListNav.react');
 var ListStore = require('../stores/ListStore');
 var ListActions = require('../actions/ListActions');
 
@@ -36,16 +37,9 @@ var QcApp = React.createClass({
       return null;
     }
 
-	var lists = this.state.allLists;
   	return (
 	<div>
-	  <nav>
-		  <ol>
-		  {Object.keys(lists).map(function(id) {
-			  return <li key={id} onClick={this._click.bind(this, id)}>{lists[id].name}</li>
-		  }, this)}
-		  </ol>
-	   </nav>
+	   <ListNav lists={this.state.allLists} onClick={this._click} />
 	   <ListForm onSave={this.saveList} />
 	   <MainSection list={this.state.list} />
    </div>
